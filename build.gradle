@@ -1,9 +1,16 @@
 plugins {
     id 'java'
+    id 'application'
+}
+
+application { // Add this section – it identifies which class contains the entry point to the program which is always a method called main
+    mainClass='Main'
 }
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
