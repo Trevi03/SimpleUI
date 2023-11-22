@@ -1,30 +1,21 @@
+import Panels.Sliders.SliderPanel;
+import Shapes.Drawing;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class MainPanel extends JPanel {
-    private Canvas canvas;
+    private Canvas drawing;
     private SliderPanel sliders;
-    MainPanel(){
+    MainPanel() {
         sliders = new SliderPanel();
+        drawing = new Drawing();
 
-        canvas = new Canvas(){
-            Color col = sliders.get_val();
-            @Override
-            public void paint(Graphics g){
-                super.paint(g);
-                g.setColor(col);
-                g.fillOval(300,100,100,100);
-            }
-        };
-
-        canvas.setSize(800,300);
-        canvas.setBackground(Color.blue);
-        canvas.setVisible(true);
-
-        //this.add(new ButtonPanel());
         this.add(sliders);
-        this.add(canvas);
+        this.add(drawing);
+
         setLayout(new GridLayout(2,1));
+
     }
 }
 
